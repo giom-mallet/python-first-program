@@ -27,3 +27,6 @@ print(count10)
 print("Write to Lower Case")
 username = "Python3"
 print(username.lower())
+
+day_temperature = {'morning' : 21.0, 'noon' : 25.0 , 'evening': 15.2 }
+print(day_temperature)
