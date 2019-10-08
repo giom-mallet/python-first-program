@@ -27,3 +27,16 @@ phone_numbers = {"John Smith": "+37682929928", "Marry Simpons": "+423998200919"}
 for name , phone in phone_numbers.items() :
     print("{}: {}".format(name, phone))
 
+
+foolist = ["toto","tata","tutu"]
+
+def uppercase_list(*args):
+    result = []
+    for txt in args : 
+        result.append(txt.upper())
+    result.sort()
+    return result
+
+
+
+

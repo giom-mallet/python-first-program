@@ -16,6 +16,5 @@ for sentences in resultstring :
         continue
     final_string = final_string + ". "
     
-
 print (final_string)
 
