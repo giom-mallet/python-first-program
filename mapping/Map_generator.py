@@ -8,7 +8,7 @@ import pandas
 stamenmap = folium.Map(location=[45.717461, 2.82085], zoom_start=5, tiles="Stamen Terrain")
 
 
-volc_data = pandas.read_csv("Volcanoes.txt")
+volc_data = pandas.read_csv("mapping/Volcanoes.txt")
 lat = list(volc_data["LAT"])
 lon = list(volc_data["LON"])
 name = list(volc_data["NAME"])
@@ -37,7 +37,7 @@ def el_colors(elevation):
         return 'red'
 
 
-country_group.add_child(folium.GeoJson(data=open('world.json','r',encoding = 'utf-8-sig').read(),
+country_group.add_child(folium.GeoJson(data=open('mapping/world.json','r',encoding = 'utf-8-sig').read(),
 style_function=pop_colors
 ))
 
@@ -54,4 +54,7 @@ for lati, longi, name, elev in zip(lat, lon, name , elev):
 
 stamenmap.add_child(country_group)
 stamenmap.add_child(volcano_group)
-stamenmap.save("Reyvialle_terrain.html")
+
+stamenmap.add_child(folium.LayerControl())
+
+stamenmap.save("mapping/Reyvialle_terrain.html")
